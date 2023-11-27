@@ -37,7 +37,6 @@ const Login = () => {
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            navigate("/browse")
             // ...
           })
           .catch((error) => {
@@ -58,7 +57,6 @@ const Login = () => {
               // Profile updated!
               const { uid, displayName, email } = auth.currentUser;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }))
-              navigate("/browse")
             }).catch((error) => {
               // An error occurred
              setErrMsg(error.message)
